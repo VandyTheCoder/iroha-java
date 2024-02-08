@@ -19,7 +19,7 @@ jobs:
           java-version: '8'
 
       - name: "GRADLE: Publish Library"
-        run: ./gradlew test clean publish
+        run: ./gradlew publish
         env:
-          GH_PKG_USERNAME: ${{ vars.PUB_JAR_USERNAME }}
-          GH_PKG_TOKEN: ${{ secrets.PUB_JAR_TOKEN }}
+          GIT_PUB_USER: ${{ vars.PUB_JAR_USERNAME }}
+          GIT_TOKEN: ${{ secrets.PUB_JAR_TOKEN }}
