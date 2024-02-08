@@ -3,11 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-allprojects {
-    group 'me.lucifer'
-    version = "1.0.4"
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'groovy'
@@ -76,9 +71,9 @@ publishing {
         subprojects.each { subproject ->
             "${subproject.name}Jar"(MavenPublication) {
                 from subproject.components.java
-                groupId =
+                groupId = project.properties["group"].toString()
                 artifactId = "${subproject.name}"
-                version = '1.0.6'
+                version = project.properties["version"].toString()
             }
         }
     }
