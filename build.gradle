@@ -3,11 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-allprojects {
-    group 'hyperledger'
-    version = "1.0"
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'groovy'
